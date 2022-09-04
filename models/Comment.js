@@ -29,11 +29,11 @@ Comments.init(
             key: 'id',
       },
     },
-comment_dt: {
+date: {
             type: DataTypes.DATE,
             defaultValue: DataTypes.NOW,
 },
-comments: {
+comment: {
           type: DataTypes.TEXT,
           allowNull: false,
 },
@@ -46,4 +46,4 @@ comments: {
     modelName: "comments",
   }
 );
-model.exports = Comments;
+module.exports = Comments;

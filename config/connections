@@ -1,13 +1,13 @@
-const sequelize = require("sequelize");
-const path = require("path");
-require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+const Sequelize = require('sequelize');
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, "../.env") });
 
 let sequelize;
 
 if (process.env.JAWSDB_URL) {
-  sequelize = new sequelize(process.env.JAWSDB_URL);
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
-  sequelize = new sequelize(
+  sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
     process.env.DB_PASSWORD,
@@ -18,4 +18,5 @@ if (process.env.JAWSDB_URL) {
     }
   );
 }
-modular.exports = sequelize;
+
+module.exports = sequelize;

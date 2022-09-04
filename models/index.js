@@ -4,15 +4,16 @@ const Blog = require("./Blog");
 const Comment = require("./Comment");
 
 //relation ship between blog and user
-User.hasMany(Blog)
-Blog.belongsTo(User);
+Blog.belongsTo(User, {forgienKey: 'user_id'});
+User.hasMany(Blog, {forgienKey: 'user_id'})
+
 
 //relation ship between comment and blog
-Blog.hasMany(Comment);
-Comment.belongsTo(Blog)
+Blog.hasMany(Comment, {forgienKey: 'blog_id'});
+Comment.belongsTo(Blog, {forgienKey: 'blog_id'})
 
-User.hasMany(Comment);
-Comment.belongsTo(User)
+User.hasMany(Comment, {forgienKey: 'user_id'});
+Comment.belongsTo(User, {forgienKey: 'user_id'})
 
 
 module.exports = { 

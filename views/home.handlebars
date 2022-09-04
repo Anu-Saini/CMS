@@ -1,0 +1,20 @@
+
+{{#each items as |item|}}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+              <div class="card-header">
+                        <a href="">
+                                    <h4>
+                                        {{item.title}}   
+                                    </h4>
+                                    </a>
+                        
+                        <h5 class="header-info">
+                                    Posted by {{item.user.name}} on {{item.date}}
+                        </h5>
+                        </div>
+      </div>
+      <div class="panel-body"> {{item.content}}</div>
+    </div>
+
+    {{/each}}

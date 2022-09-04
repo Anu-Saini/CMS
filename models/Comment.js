@@ -17,7 +17,7 @@ Comments.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
-            model:'blog',
+            model:'Blog',
             key: 'id',
       },
     },
@@ -25,7 +25,7 @@ Comments.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
-            model:'user',
+            model:'User',
             key: 'id',
       },
     },

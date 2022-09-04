@@ -1,10 +1,12 @@
 //Index routes for API end points
 const router = require('express').Router();
-
-const apiRoutes = require('./api');
 const homeRoutes = require ('./homeRoutes');
+const userRoutes = require ('./usersRoute');
+const authRoutes = require ('./authRoutes');
 
-router.use('/', homeRoutes);
-router.use('/api', apiRoutes);
 
+router.use('/home', homeRoutes);
+router.use('/user', userRoutes);
+router.use('/', authRoutes);
+//router.use('/', homeRoutes);
 module.exports = router;

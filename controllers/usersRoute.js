@@ -1,7 +1,7 @@
 //const homeRoutes = require ('/userRoutes');
 //Index routes for API end points
 const router = require('express').Router();
-const User = require('../models/user')
+const { Blog, Comment, User } = require("../models");
 
 const bcrypt = require("bcrypt");
 
@@ -11,22 +11,18 @@ router.get('/login', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-            console.log(req.body);
             try {
               const userData = await User.findOne({ where: { email: req.body.email } });
-          console.log(userData)
+              const data = userData.get({ plain: true });
               if (!userData) {
                 res
                   .status(400)
                   .json({ message: 'Incorrect email or password, please try again' });
                 return;
               }
-          
-              console.log(req.body.password);
-              console.log(userData.password);
+
               //const validPassword =  bcrypt.compareSync(req.body.password, userData.password);
               const validPassword = req.body.password === userData.password;
-              console.log(validPassword);
               if (!validPassword) {
                 res
                   .status(400)
@@ -36,19 +32,23 @@ router.post('/login', async (req, res) => {
           
               req.session.save(() => {
                 req.session.user_id = userData.id;
+                console.log(req.session.user_id);
                 req.session.logged_in = true;
-                
-                res.json({ user: userData, message: 'You are now logged in!' });
+                res
+                .status(200)
+                .json({ user: data, message: 'You are now logged in!' });
               });
-          
+              
             } catch (err) {
                         console.log(err);
               res.status(400).json(err);
             }
           });
 
+     
 
 
+    
 
 
 

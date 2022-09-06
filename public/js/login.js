@@ -1,7 +1,6 @@
 // JS TO HANDLE LOGIN
 const loginFormHandler = async (event) => {
             event.preventDefault();
-          debugger
             // Collect values from the login form
             const email = document.querySelector('#email').value.trim();
             const password = document.querySelector('#password').value.trim();
@@ -16,7 +15,8 @@ const loginFormHandler = async (event) => {
           
               if (response.ok) {
                 // If successful, redirect the browser to the profile page
-                document.location.replace('/home');
+                
+                document.location.replace('dashboard');
               } else {
                 alert(response.statusText);
               }

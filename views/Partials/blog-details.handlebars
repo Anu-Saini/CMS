@@ -1,0 +1,55 @@
+
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="card-header">
+      <a data-id={{id}} href="blog/{{id}}"  name="title" id={{id}}>
+        <h4>
+          {{ title}}
+        </h4>
+      </a>
+
+      <h5 class="header-info">
+        Posted by {{ user.name}} on {{format_time  date}}
+      </h5>
+    </div>
+  </div>
+  <div class="panel-body"> {{ content}}</div>
+</div>
+
+{{!-- 
+<form>
+ <div class="panel panel-default">
+  <div class="panel-heading">
+   <div class="card-header">
+
+    <input type="text" value="{{title}}" name="title" class="form-control">
+
+   </div>
+   <div class="form-group">
+    <label for="content">Content</label>
+    <textarea id="content" name="content" placeholder="Content" rows="4" cols="50" value="{{content}}">{{content}}</textarea>
+   </div>
+   {{#each comments as |comment|}}
+   <div class="form-group">
+    <p>
+     {{comment}}
+     - posted on {{date}}
+    </p>
+   </div>
+   {{/each}}
+    
+<div class="save-btn-panel">
+    <button type="submit" id="login-submit" class="btn btn-primary hide">Save</button>
+    <button type="cancel" id="cancel" class="btn btn-error hide">Cancel</button>
+ </div>
+ 
+ <div class="update-btn-panel">
+    <button id="edit" class="btn btn-primary" click="">Edit</button>
+    <button id="delete" class="btn btn-error">Delete</button>
+ </div> 
+ 
+</form>
+</div>
+
+<script src="./js/blogs.js"></script> --}}

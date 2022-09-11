@@ -1,7 +1,6 @@
 //Index routes for API end points
 const router = require("express").Router();
 const { Blog, Comment, User } = require("../models");
-
 const bcrypt = require("bcrypt");
 
 router.get("/login", async (req, res) => {

@@ -1,7 +1,4 @@
 
-
-
-
 const saveBlogHandler = async (event) => {
 
   event.preventDefault();

@@ -2,14 +2,16 @@ const router = require("express").Router();
 const { Blog, Comment, User } = require("../models");
 
 router.get("/newblog", async (req, res) => {
-  console.log("in");
-  try {
-    const id = req.session.user_id;
-    if (id) res.render("newblog");
-    else res.redirect("./login");
-  } catch (e) {
-    console.log(e);
-  }
+ console.log("in");
+ try {
+  const id = req.session.user_id;
+  if(id)
+      res.render("newblog");
+   else
+      res.redirect("login")
+ } catch (e) {
+   console.log(e);
+ }
 });
 
 router.get("/:id", async (req, res) => {
@@ -25,8 +27,7 @@ router.get("/:id", async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-  // res.status(200).json(data)
-});
+ });
 
 router.put("/:id", async (req, res) => {
   console.log(req.body.something);
@@ -61,9 +62,7 @@ router.post("/", async (req, res) => {
     user_id: req.session.user_id,
   });
   res.status(200).send("ok");
-
 });
-
 
 router.post("/comment", async (req, res) => {
   console.log(req.body)
@@ -75,10 +74,6 @@ router.post("/comment", async (req, res) => {
   }).then(() =>{
     res.status(200).send("ok");
   })
-  
-  
-
-});
+ });
 
 module.exports = router;
-

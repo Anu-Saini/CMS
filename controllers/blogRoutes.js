@@ -1,8 +1,6 @@
 const router = require("express").Router();
 const { Blog, Comment, User } = require("../models");
 
-
-
 router.get("/newblog", async (req, res) => {
  console.log("in");
  try {
@@ -29,10 +27,7 @@ router.get("/:id", async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-  // res.status(200).json(data)
-});
-
-
+ });
 
 router.put("/:id", async (req, res) => {
   console.log(req.body.something);
@@ -60,20 +55,25 @@ router.put("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
- console.log(req.session.user_id)
- try{  Blog.create({
+  const jane = await Blog.create({
     title: req.body.title,
     content: req.body.content,
     blog_dt: new Date(),
     user_id: req.session.user_id,
-  }).then(() =>{
-     res.status(201);
-  })
- }
- catch(e)
- {
-  console.log(e);
- }
+  });
+  res.status(200).send("ok");
 });
+
+router.post("/comment", async (req, res) => {
+  console.log(req.body)
+  Comment.create({
+    blog_id: req.body.blog_id,
+    user_id: req.session.user_id,
+    blog_dt: new Date(),
+    comment: req.body.comment,
+  }).then(() =>{
+    res.status(200).send("ok");
+  })
+ });
 
 module.exports = router;

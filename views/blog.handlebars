@@ -18,6 +18,12 @@
         </textarea>
 
       </div>
+
+   <textarea id ="new-comment" name="comment" rows="3" cols="500">
+       
+        </textarea>
+
+<button id="save-comment" class="btn btn-primary">Post comment</button>
       {{#each items.comments as |item|}}
 
         <textarea name="comment" rows="3" cols="500" disabled="disabled">
@@ -31,5 +37,5 @@
     </div>
   </div>
 </form>
-
-<script src="/js/blogs.js"></script>
+    
+   <script src="/js/blogs.js"></script>

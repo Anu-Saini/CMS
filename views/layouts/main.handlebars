@@ -23,20 +23,26 @@
     <nav>
       <ul>
         <li><a class="active" href="/home">Home</a></li>
-        <li><a href="#news">Dashboard</a></li>
-        <li><a href="/login">Login</a></li>
-        <li class="hide"><a href="/logout">Logout</a></li>
+      
+       <li><a href="/dashboard">Dashboard</a></li> 
+      
+      {{#if logged_in}}  
+           <li><a id="log-out">Logout</a></li>
+       {{else}}
+           <li><a href="/login" id="log-in">Login</a></li>
+      {{/if}}
       </ul>
-    </nav>
+    </nav >
+
+
+    <div id='title'>
+      <h2>The Tech Blog</h2>
+    </div>
   </div>
   <div class="wrapper">
     {{{ body }}}
   </div>
-  <footer>
-
-  </footer>
-
-
+  <script src="/js/logout.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,24 @@
+{{#each items as |item|}}
+<div class="panel">
+  <div class="panel-heading">
+    <div class="card-header">
+      <a data-id={{item.id}} href="blog/{{item.id}}"  name="title" id={{item.id}}>
+        <h4>
+          {{item.title}}
+        </h4>
+      </a>
+
+      <h5 class="header-info">
+        Posted by {{item.user.name}} on {{format_time item.date}}
+      </h5>
+    </div>
+  </div>
+  <div class="panel-body"> {{item.content}}</div>
+</div>
+
+{{/each}}
+<div class="bttn">
+ <a href="./blog/newblog">New Blog</a> 
+ </div>
+
+<script src="./js/dashboard.js"></script>

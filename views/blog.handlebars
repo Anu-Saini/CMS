@@ -1,0 +1,41 @@
+<form data-id={{items.id}}>
+  <div class="panel-default">
+    <div class="panel-heading">
+      <h3>Topic: {{items.title}}</h3>
+      <br />
+
+      <div class="form-group">
+        <label for="comments">Content</label>
+
+        <textarea
+          name="comment"
+          placeholder="content"
+          id="content"
+          rows="4"
+          cols="500"
+        >
+          {{items.content}}
+        </textarea>
+
+      </div>
+   <textarea id ="new-comment" name="comment" rows="3" cols="500">
+       
+        </textarea>
+
+<button id="save-comment" class="btn btn-primary">Post comment</button>
+      {{#each items.comments as |item|}}
+
+        <textarea name="comment" rows="3" cols="500" disabled="disabled">
+          {{item.comment}}
+          - posted on {{format_time item.date}}
+        </textarea>
+
+      {{/each}}
+      <button id="save-blog" class="btn btn-primary">Save</button>
+      <button type="cancel" id="cancel" class="btn btn-error">Cancel</button>
+    </div>
+  </div>
+</form>
+
+    
+   <script src="/js/blogs.js"></script>

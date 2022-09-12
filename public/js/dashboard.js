@@ -20,5 +20,5 @@ const editBlogHandler = async (event) => {
     }
   }
 };
-document.querySelector('a')
+document.querySelector('[name="title"]')
   .addEventListener('click', editBlogHandler);

@@ -2,7 +2,6 @@ const router = require("express").Router();
 const { Blog, Comment, User } = require("../models");
 
 router.get("/newblog", async (req, res) => {
-<<<<<<< HEAD
   console.log(req.session.logged_in);
   try {
     const id = req.session.user_id;
@@ -11,18 +10,6 @@ router.get("/newblog", async (req, res) => {
   } catch (e) {
     console.log(e);
   }
-=======
- console.log("in");
- try {
-  const id = req.session.user_id;
-  if(id)
-      res.render("newblog");
-   else
-      res.redirect("login")
- } catch (e) {
-   console.log(e);
- }
->>>>>>> d16401bdbb280b838cce78eb0f263fd309a980d4
 });
 
 router.get("/:id", async (req, res) => {
@@ -84,12 +71,7 @@ router.post("/comment", async (req, res) => {
     comment: req.body.comment,
   }).then(() => {
     res.status(200).send("ok");
-<<<<<<< HEAD
   });
 });
-=======
-  })
- });
->>>>>>> d16401bdbb280b838cce78eb0f263fd309a980d4
 
 module.exports = router;

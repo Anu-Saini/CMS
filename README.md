@@ -50,9 +50,9 @@ The following images will depict the functionality of the web applicaton
 ![The aplication offers other users to write their comments/opinions on a particular post](./public/images/comments.jpg)
 
 ### Application  
-The application has been hoisted on cloud by using a  cloud service platform called Heroku. The link to the application is : 
+The application has been hoisted on cloud by using a  cloud service platform called Heroku. The link to the application is : https://blog-managemt.herokuapp.com
 
-## Question / inquireies / suggestions 
+## Question / inquiries / suggestions 
 For questions can be directed to us at the below addresses :
-github Username: Anu_saini
-email :  
+github Username: Anu_Saini
+email :  anuraagsaini@yahoo.co.in

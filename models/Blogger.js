@@ -9,7 +9,7 @@ class Blogger extends Model {
   };
 };
 
-Bloggerr.init(
+Blogger.init(
   {
     id: {
       type: DataTypes.INTEGER,

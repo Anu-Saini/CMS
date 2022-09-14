@@ -11,7 +11,8 @@ router.get("/", withAuth, async (req, res) => {
     res.render('login')
     return
   } 
-  const data = await Blog.findAll({ where: { user_id: userId } });
+
+ const data = await Blog.findAll({ where: { user_id: userId } });
 
   const blogs = data.map((item) => item.get({ plain: true }));
   console.log(blogs);
@@ -30,14 +31,5 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
-
-//   const blogs = data.map((item) => item.get({ plain: true }));
-//   console.log(blogs);
-//   res.render("dashboard", { items: blogs });
-// });
-
-
-
 
 module.exports = router;

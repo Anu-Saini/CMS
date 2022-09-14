@@ -1,7 +1,6 @@
 
 
 const createpostHandler = async (event) => {
-
   event.preventDefault();
  const title = document.getElementById('title').value.trim();
  const content = document.getElementById('content').value.trim();
@@ -27,5 +26,4 @@ const createpostHandler = async (event) => {
  };
  
  document.getElementById('save-blog').addEventListener('click', createpostHandler);
- 
  

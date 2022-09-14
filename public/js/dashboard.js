@@ -1,5 +1,6 @@
 // JS TO HANDLE LOGIN
 const editBlogHandler = async (event) => {
+
   //event.preventDefault();
 
   const id = event.id;

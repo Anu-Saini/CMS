@@ -56,7 +56,7 @@ Blogger.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Blogger",
+    modelName: "user",
   }
 );
 module.exports = Blogger;

@@ -52,7 +52,9 @@ margin-bottom: -10px;
 .header-info{
   padding-right: 30px;
   font-style: italic;
+  font : 16px; 
 }
+
 .card-title{
   padding-left: 30px;
 }
@@ -67,12 +69,12 @@ margin-bottom: -10px;
   justify-content: space-between;
 }
 
-#titlebar h2 {
+#title h2 {
   margin-right: 30px;
-  font-size: 42px;
+  font-size: 40px;
   font-weight: bolder;
   font-style: italic;
-  color:lightblue ;
+  color:green ;
 }
 #blog{
  border: 4px solid white;
@@ -96,11 +98,6 @@ a {
   font-weight:bold;
 }
 h5 {
-  font-size: 16px;
-}
-.panel {
-  margin-bottom : 10px;
-  margin: 13px;
   font-size: 20px;
 }
 .panel {
@@ -112,14 +109,10 @@ h5 {
 .panel-heading{
 padding:0px;
 border-bottom: 13px solid black;
-border-bottom: 1px solid black;
-padding: 10px 0px;
 
 } 
 .panel-body{
   font-size: 16px;
-  padding:10px;
-  background-color:#cfdce8;
   background-color: aliceblue;
 }
 .panel-default{
@@ -136,7 +129,6 @@ input[type=text], select, textarea {
 body {
   background-color: #bfeace;
 }
-
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
@@ -182,6 +174,7 @@ input[type=submit]:hover {
 .form-group p {
   font-size: 15px;
 }
+
 /* Clear floats after the columns */
 .row:after {
   content: "";

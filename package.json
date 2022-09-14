@@ -1,11 +1,15 @@
 {
             "name": "blog",
             "version": "1.0.0",
+             "engines": {
+                          "node": "12.18.4"
+                        },
             "description": "",
             "main": "server.js",
             "scripts": {
                "test": "echo \"Error: no test specified\" && exit 1",
-               "start": "nodemon server.js --watch",
+               "start": "node server.js",
+               "build": "npm install",         
                "seed": "node seeds/index.js"
             },
             "keywords": [],

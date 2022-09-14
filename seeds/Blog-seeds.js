@@ -5,7 +5,7 @@ const blogData = [
 title:'Why MVC is so important',
 content: 'MVC allows developers to maintain a true separation of concerns, devising their code between the model layer for data,the view layer for design, and the controller layer for application logic.',
 blog_dt: '03/09/2022',
-user_id: 1,
+Blogger_id: 1,
  },
  {
   title:'Authenticaton vs. Authorization',

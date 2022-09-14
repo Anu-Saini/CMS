@@ -1,7 +1,7 @@
 //const homeRoutes = require ('/userRoutes');
 //Index routes for API end points
 const router = require('express').Router();
-const { Blog, Comment, User } = require("../models");
+const { Blog, Comment, Blogger } = require("../models");
 const withAuth = require('../utils/auth');
 
 
@@ -18,7 +18,7 @@ router.get("/" , async (req, res) => {
  const data = await Blog.findAll({
    include: [
      {
-        model: User
+        model: Blogger
      }
    ], 
  });

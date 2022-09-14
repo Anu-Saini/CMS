@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
+const seedAll = require('./seeds/index');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connections');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -46,5 +47,6 @@ app.use(express.static(path.join(__dirname, 'public/')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
+seedAll();
   app.listen(PORT, () => console.log(`Now listening at localhost:, ${ PORT }`));
 });

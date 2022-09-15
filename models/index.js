@@ -1,23 +1,21 @@
 // CREATE RELATIONSHIPS BETWEEN MODELS AND EXPORT MODULES
-const Blogger = require("./Blogger");
+const User = require("./User");
 const Blog = require("./Blog");
 const Comment = require("./Comment");
 
 //relation ship between blog and user
-Blog.belongsTo(Blogger, {forgienKey: 'Blogger_id'});
-Blogger.hasMany(Blog, {forgienKey: 'Blogger_id'})
-
+Blog.belongsTo(User, { forgienKey: "user_id" });
+User.hasMany(Blog, { forgienKey: "user_id" });
 
 //relation ship between comment and blog
-Blog.hasMany(Comment, {forgienKey: 'blog_id'});
-Comment.belongsTo(Blog, {forgienKey: 'blog_id'})
+Blog.hasMany(Comment, { forgienKey: "blog_id" });
+Comment.belongsTo(Blog, { forgienKey: "blog_id" });
 
-Blogger.hasMany(Comment, {forgienKey: 'Blogger_id'});
-Comment.belongsTo(Blogger, {forgienKey: 'Blogger_id'})
+User.hasMany(Comment, { forgienKey: "user_id" });
+Comment.belongsTo(User, { forgienKey: "user_id" });
 
-
-module.exports = { 
-            Blogger, 
-            Blog,
-            Comment,
- };
+module.exports = {
+  User,
+  Blog,
+  Comment,
+};

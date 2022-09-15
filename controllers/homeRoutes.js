@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Blog, Comment, Blogger } = require("../models");
+const { Blog, Comment, User } = require("../models");
 const withAuth = require('../utils/auth');
 
 //the endpoint for getting all blogs
@@ -8,7 +8,7 @@ router.get("/" , async (req, res) => {
     const data = await Blog.findAll({
       include: [
         {
-           model: Blogger
+           model: User
         }
       ], 
     });
@@ -37,7 +37,7 @@ router.get("/:id" , async (req, res) => {
     const data = await Blog.findByPk(req.params.id, {
       include: [
         {
-           model: Blogger
+           model: User
         }
       ], 
     });

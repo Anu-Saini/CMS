@@ -1,6 +1,6 @@
-//Index routes for API end points
+//Index routes for API end point
 const router = require("express").Router();
-const { Blog, Comment, Blogger } = require("../models");
+const { Blog, Comment, User } = require("../models");
 const bcrypt = require("bcrypt");
 
 router.get("/login", async (req, res) => {
@@ -9,7 +9,7 @@ router.get("/login", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const userData = await Blogger.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { email: req.body.email } });
     const data = userData.get({ plain: true });
     if (!userData) {
       res

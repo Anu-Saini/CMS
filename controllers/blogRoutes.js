@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Blog, Comment, Blogger } = require("../models");
+const { Blog, Comment, User } = require("../models");
 
 router.get("/newblog", async (req, res) => {
   console.log(req.session.logged_in);
@@ -16,7 +16,7 @@ router.get("/:id", async (req, res) => {
   console.log(req.params.id);
   try {
     const data = await Blog.findByPk(req.params.id, {
-      include: [{ model: Comment }, { model: Blogger }],
+      include: [{ model: Comment }, { model: User }],
     });
     const blog = data.get({ plain: true });
     console.log(blog);
@@ -39,7 +39,7 @@ router.put("/:id", async (req, res) => {
       }
     );
     const data = await Blog.findByPk(req.params.id, {
-      include: [{ model: Comment }, { model: Blogger }],
+      include: [{ model: Comment }, { model: User }],
     });
     const blog = data.get({ plain: true });
 

@@ -10,7 +10,7 @@
       </a>
 
       <h5 class="header-info">
-        Posted by {{ Blogger.name}} on {{format_time  date}}
+        Posted by {{ user.name}} on {{format_time  date}}
       </h5>
     </div>
   </div>
@@ -21,6 +21,7 @@
 <form>
  <div class="panel panel-default">
   <div class="panel-heading">
+    
    <div class="card-header">
 
     <input type="text" value="{{title}}" name="title" class="form-control">
